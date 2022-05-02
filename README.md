@@ -6,15 +6,28 @@ https://www.digitalocean.com/community/tutorials/how-to-install-python-3-and-set
 https://www.freecodecamp.org/news/virtualenv-with-virtualenvwrapper-on-ubuntu-18-04/
 
 `pip3 install virtualenvwrapper`
-`vim .bashrc`
+
+And then with vi (or your editor of choice, edit your bashrc to include below:
+
+`vim ~/.bashrc`
 
 ```export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
 export WORKON_HOME=$HOME/.virtualenvs
 export VIRTUALENVWRAPPER_VIRTUALENV=/home/<your-user-name>/.local/bin/virtualenv
-source ~/.local/bin/virtualenvwrapper.sh```
+source ~/.local/bin/virtualenvwrapper.sh
+```
+Once that's done, either run `source ~/.bashrc` or restart your terminal. The 
+terminal knows to run that command on launch, so it's the same either way.
 
-`mkvirtualenv warchest`
-`which python`
+Then we're gonna setup your dev environment for this project specifically. We'll
+do it in such a way if you have other python project you're working on, they 
+can both exist on your machine without stepping on each other. 
+
+```mkvirtualenv warchest
+which python
+```
+From here, you should see you're on a brand new version of python relative to 
+your current working directory
 
 `git clone git@github.com:kalebpomeroy/warchest.git`
 `pip install -r requirements.txt`
